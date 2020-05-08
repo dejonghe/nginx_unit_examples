@@ -1,0 +1,37 @@
+{
+	"listeners": {
+		"*:8080": {
+			"pass": "routes/main"
+		}
+	},
+
+	"applications": {
+		"app-name": {
+			"type": "php",
+			"processes": 2,
+			"root": "/var/www/app/",
+			"index": "index.php",
+			"user": "nobody",
+			"group": "nogroup"
+		}
+	},
+
+	"routes": {
+		"main": [
+			{
+				"match": {
+					"uri": "/wiki/*"
+				},
+
+				"action": {
+					"share": "/var/www/static/"
+				}
+			},
+			{
+				"action": {
+					"pass": "applications/app-name"
+				}
+			}
+		]
+	}
+}
