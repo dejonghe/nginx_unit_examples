@@ -8,8 +8,8 @@
     "applications": {
         "django_project": {
             "type": "python",
-            "path": "/var/app/example",
-            "module": "example.wsgi",
+            "path": "/var/app",
+            "module": "app.wsgi",
             "user": "nobody"
         }
     }

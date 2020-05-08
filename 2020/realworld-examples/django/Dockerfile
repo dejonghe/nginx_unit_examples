@@ -1,16 +1,15 @@
 FROM nginx/unit
 
-RUN mkdir /var/app/
-WORKDIR /var/app/
+WORKDIR /var/
 
 RUN apt update && \
     apt install -y python3 python3-pip && \
     python3 -m pip install Django && \
-    django-admin startproject example
+    django-admin startproject app
 
-ADD settings.py /var/app/example/example/settings.py
+ADD settings.py /var/app/app/settings.py
 
-RUN chown -R nobody:nogroup /var/app/example 
+RUN chown -R nobody:nogroup /var/app
 
 ADD /unit-conf.json /var/lib/unit/conf.json
 
