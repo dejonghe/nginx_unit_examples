@@ -1,0 +1,16 @@
+{
+    "listeners": {
+        "127.0.0.1:8080": {
+            "application": "django_project"
+        }
+    },
+
+    "applications": {
+        "django_project": {
+            "type": "python",
+            "path": "/home/derek/oreilly/unit-testing/django/unit/",
+            "module": "unit.wsgi",
+            "user": "derek"
+        }
+    }
+}

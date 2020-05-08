@@ -1,0 +1,7 @@
+{
+     "type": "php",
+     "processes": 2,
+     "root": "/home/derek/oreilly/unit-testing/deployment/version-2",
+     "index": "index.php",
+     "user": "derek"
+}

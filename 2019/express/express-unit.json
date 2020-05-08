@@ -1,0 +1,18 @@
+{
+    "listeners": {
+        "127.0.0.1:8080": {
+            "application": "express_project"
+        }
+    },
+
+    "applications": {
+        "express_project": {
+            "type": "external",
+            "executable": "/home/derek/oreilly/unit-testing/express/index.js",
+            "user": "derek",
+            "environment": {
+              "mode": "unit"
+            }
+        }
+    }
+}
