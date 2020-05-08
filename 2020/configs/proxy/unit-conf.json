@@ -1,0 +1,33 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "routes"
+        }
+    },
+    "routes": [
+        {
+            "match": {
+                "uri": "/wiki/*"
+            },
+            "action": { 
+                "proxy": "http://172.17.0.1:80"
+            }
+        },
+        {
+            "action": { 
+                "pass": "applications/my-app"
+            }
+        }
+    ],
+    "applications": {
+        "my-app": { 
+            "type": "php",
+            "processes": 2,
+            "root": "/var/www/app/",
+            "index": "index.php",
+            "user": "nobody",
+            "group": "nogroup"
+        }
+    }
+}
+
