@@ -1,6 +1,7 @@
 FROM nginx/unit
 
-ADD / /var/www/app/
+ADD /index.php /var/www/app/
+ADD /myfile /var/www/static/wiki/
 
 EXPOSE 8080
 EXPOSE 5000

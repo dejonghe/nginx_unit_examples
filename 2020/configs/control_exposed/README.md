@@ -20,4 +20,6 @@ curl -X POST -d '{"action":{"pass":"applications/app-name"}}' http://<container_
 curl -X PUT -d '"routes/main"' http://<container_ip>:5000/config/listeners/*:8080/pass
 curl http://<container_ip>:5000/config -o config.json
 curl -X PUT -d @config.json http://<container_ip>:5000/config 
+curl http://<container_ip>:8080/
+curl http://<container_ip>:8080/wiki/myfile
 ```
