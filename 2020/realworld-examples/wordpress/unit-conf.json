@@ -1,29 +1,47 @@
 {
     "listeners": {
-        "*:8090": {
-            "pass": "applications/wp_index"
-        },
-
-        "*:8091": {
-            "pass": "applications/wp_direct"
+        "*:8080": {
+            "pass": "routes/wordpress"
         }
     },
-
+    "routes": {
+        "wordpress": [
+            {
+                "match": {
+                    "uri": [
+                        "*.php",
+                        "*.php/*",
+                        "/wp-admin/"
+                    ]
+                },
+                "action": {
+                    "pass": "applications/wordpress_direct"
+                }
+            },
+            {
+                "action": {
+                    "share": "/var/app/wordpress/",
+                    "fallback": {
+                        "pass": "applications/wordpress"
+                    }
+                }
+            }
+        ]
+    },
     "applications": {
-        "wp_index": {
+        "wordpress": {
             "type": "php",
             "user": "nobody",
             "group": "nogroup",
             "root": "/var/app/wordpress/",
             "script": "index.php"
         },
-
-        "wp_direct": {
+        "wordpress_direct": {
             "type": "php",
             "user": "nobody",
             "group": "nogroup",
-            "root": "/var/app/wordpress/",
-            "index": "index.php"
+            "root": "/var/app/wordpress/"
         }
+
     }
 }

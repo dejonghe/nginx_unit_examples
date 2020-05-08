@@ -4,7 +4,7 @@ RUN mkdir /var/app
 WORKDIR /var/app
 
 RUN apt update && \
-    apt install wget
+    apt install wget php7.3-mysql
 
 RUN wget https://wordpress.org/latest.tar.gz && \
     tar xzvf latest.tar.gz && \
@@ -14,6 +14,7 @@ RUN wget https://wordpress.org/latest.tar.gz && \
     chmod -R g+w /var/app/wordpress/wp-content/themes && \
     chmod -R g+w /var/app/wordpress/wp-content/plugins
 
+ADD /wp-config.php /var/app/wordpress/wp-config.php
 ADD /unit-conf.json /var/lib/unit/conf.json
 
 EXPOSE 8080

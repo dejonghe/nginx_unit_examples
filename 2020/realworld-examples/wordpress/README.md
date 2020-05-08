@@ -2,7 +2,7 @@
 # Build
 
 ```
-docker build -t unit-real-wordpress .
+docker-compose up
 ```
 
 # Run
