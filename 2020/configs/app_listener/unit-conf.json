@@ -1,0 +1,18 @@
+{
+    "listeners": {
+        "*:8080": {
+            "application": "my-app"
+        }
+    },
+    "applications": {
+        "my-app": { 
+            "type": "php",
+            "processes": 2,
+            "root": "/var/www/app/",
+            "index": "index.php",
+            "user": "nobody",
+            "group": "nogroup"
+        }
+    }
+}
+
