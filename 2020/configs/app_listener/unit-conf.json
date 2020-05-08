@@ -1,7 +1,7 @@
 {
     "listeners": {
         "*:8080": {
-            "application": "my-app"
+            "pass": "applications/my-app"
         }
     },
     "applications": {
