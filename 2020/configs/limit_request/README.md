@@ -10,7 +10,7 @@ docker build -t unit-config-limit-req .
 docker run -it unit-config-limit-req
 ```
 
-# Excersise
+# Exercise
 
 ```
 for i in $(seq 1 20); do curl http://<container_port>:8080/ ; done

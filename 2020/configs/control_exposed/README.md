@@ -10,7 +10,7 @@ docker build -t unit-config-upstream .
 docker run -it unit-config-upstream
 ```
 
-# Excersise
+# Exercise
 
 ```
 curl -X PUT -d @application-object.json http://<container_ip>:5000/config/applications/app-name

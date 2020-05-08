@@ -10,7 +10,7 @@ docker build -t unit-config-upstream .
 docker run -it unit-config-upstream
 ```
 
-# Excersise
+# Exercise
 
 ```
 curl http://<container_ip>:8080/myfile

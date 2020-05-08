@@ -10,7 +10,7 @@ docker build -t unit-config-app .
 docker run -it unit-config-app
 ```
 
-# Excersise
+# Exercise
 
 ```
 curl http://<container_ip>:8080

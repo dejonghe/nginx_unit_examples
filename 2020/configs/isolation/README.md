@@ -12,7 +12,7 @@ docker build -t unit-config-isolation .
 docker run -it unit-config-isolation
 ```
 
-# Excersise
+# Exercise
 
 ```
 curl http://<container_ip>:8080

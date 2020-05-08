@@ -10,7 +10,7 @@ docker build -t unit-config-static .
 docker run -it unit-config-static
 ```
 
-# Excersise
+# Exercise
 
 ```
 curl http://<container_ip>:8080/myfile

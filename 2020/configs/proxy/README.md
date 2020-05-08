@@ -10,7 +10,7 @@ docker build -t unit-config-proxy .
 docker run -it unit-config-proxy
 ```
 
-# Excersise
+# Exercise
 
 ```
 curl http://<container_ip>:8080
