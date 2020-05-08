@@ -1,0 +1,41 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "routes"
+        }
+    },
+    "routes": [
+        {
+            "match": {
+                "host": "blog.example.com"
+            },
+            "action": { 
+                "pass": "applications/blog"
+            }
+        },
+        {
+            "action": { 
+                "pass": "applications/my-app"
+            }
+        }
+    ],
+    "applications": {
+        "my-app": { 
+            "type": "php",
+            "processes": 2,
+            "root": "/var/www/app/",
+            "index": "index.php",
+            "user": "nobody",
+            "group": "nogroup"
+        },
+        "blog": { 
+            "type": "php",
+            "processes": 2,
+            "root": "/var/www/app/",
+            "index": "blog.php",
+            "user": "nobody",
+            "group": "nogroup"
+        }
+    }
+}
+
