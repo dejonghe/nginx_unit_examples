@@ -1,0 +1,20 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "applications/app-name"
+        }
+    },
+    "applications": {
+        "app-name": {
+            "type": "php",
+            "processes": 5,
+            "root": "/var/www/app/",
+            "index": "index.php",
+            "limits": {
+                "timeout": 10,
+                "requests": 5
+            }
+        }
+    }
+}
+
