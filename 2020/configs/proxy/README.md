@@ -7,7 +7,7 @@ docker build -t unit-config-proxy .
 # Run
 
 ```
-docker run -it unit-config-prxy
+docker run -it unit-config-proxy
 ```
 
 # Excersise
