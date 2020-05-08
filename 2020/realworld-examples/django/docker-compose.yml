@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress:
+     depends_on:
+       - db
+     build: .
+     restart: always
+     ports:
+     - "8080:8080"
+     environment:
+       DB_HOST: db:3306
+       DB_USER: django
+       DB_PASSWORD: django
+       DB_NAME: django
+volumes:
+    db_data: {}

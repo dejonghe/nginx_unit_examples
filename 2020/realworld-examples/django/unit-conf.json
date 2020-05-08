@@ -1,0 +1,17 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "applications/django_project"
+        }
+    },
+
+    "applications": {
+        "django_project": {
+            "type": "python",
+            "path": "/var/app/example",
+            "module": "example.wsgi",
+            "user": "nobody"
+        }
+    }
+}
+
