@@ -1,0 +1,18 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "upstreams/pool-0"
+        }
+    },
+    "upstreams": {
+        "pool-0": {
+            "servers": {
+                "172.17.0.1:8080": { },
+                "172.17.0.1:80": {
+                  "weight": 2.0
+                }
+            }
+        }
+    }
+}
+

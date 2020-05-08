@@ -1,13 +1,13 @@
 # Build
 
 ```
-docker build -t unit-config-static .
+docker build -t unit-config-upstream .
 ```
 
 # Run
 
 ```
-docker run -it unit-config-static
+docker run -it unit-config-upstream
 ```
 
 # Excersise
