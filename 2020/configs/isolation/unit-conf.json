@@ -1,0 +1,40 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "applications/my-app"
+        }
+    },
+    "applications": {
+        "my-app": { 
+            "type": "php",
+            "processes": 2,
+            "root": "/var/www/app/",
+            "index": "index.php",
+            "isolation": {
+                "namespaces": {
+                    "cgroup": true,
+                    "credential": true,
+                    "mount": true,
+                    "network": true,
+                    "pid": true,
+                    "uname": true
+                },
+                "uidmap": [
+                    {
+                        "host": 1000,
+                        "container": 0,
+                        "size": 1000
+                    }
+                ],
+                "gidmap": [
+                    {
+                        "host": 1000,
+                        "container": 0,
+                        "size": 1000
+                    }
+                ]
+            }
+        }
+    }
+}
+
