@@ -1,0 +1,29 @@
+{
+    "listeners": {
+        "*:8090": {
+            "pass": "applications/wp_index"
+        },
+
+        "*:8091": {
+            "pass": "applications/wp_direct"
+        }
+    },
+
+    "applications": {
+        "wp_index": {
+            "type": "php",
+            "user": "nobody",
+            "group": "nogroup",
+            "root": "/var/app/wordpress/",
+            "script": "index.php"
+        },
+
+        "wp_direct": {
+            "type": "php",
+            "user": "nobody",
+            "group": "nogroup",
+            "root": "/var/app/wordpress/",
+            "index": "index.php"
+        }
+    }
+}
