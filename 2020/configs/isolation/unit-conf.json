@@ -10,6 +10,8 @@
             "processes": 2,
             "root": "/var/www/app/",
             "index": "index.php",
+            "user": "root",
+            "group": "root",
             "isolation": {
                 "namespaces": {
                     "cgroup": true,
