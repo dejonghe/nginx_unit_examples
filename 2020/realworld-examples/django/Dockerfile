@@ -11,7 +11,7 @@ ADD settings.py /var/app/app/settings.py
 
 RUN chown -R nobody:nogroup /var/app
 
-ADD /unit-conf.json /var/lib/unit/conf.json
+ADD /unit-conf.json /docker-entrypoint.d/
 
 EXPOSE 8080
 EXPOSE 5000

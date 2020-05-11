@@ -15,7 +15,7 @@ RUN wget https://wordpress.org/latest.tar.gz && \
     chmod -R g+w /var/app/wordpress/wp-content/plugins
 
 ADD /wp-config.php /var/app/wordpress/wp-config.php
-ADD /unit-conf.json /var/lib/unit/conf.json
+ADD /unit-conf.json /docker-entrypoint.d/
 
 EXPOSE 8080
 EXPOSE 5000
