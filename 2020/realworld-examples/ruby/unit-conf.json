@@ -1,0 +1,18 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "applications/ruby_app"
+        }
+    },
+
+    "applications": {
+        "ruby_app": {
+            "type": "ruby",
+            "processes": 5,
+            "script": "/var/app/ruby_app/config.ru",
+            "working_directory": "/var/app/ruby_app/",
+            "user": "root"
+        }
+    }
+}
+
