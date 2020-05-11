@@ -1,0 +1,17 @@
+{
+    "listeners": {
+        "*:8080": {
+            "application": "express_project"
+        }
+    },
+
+    "applications": {
+        "express_project": {
+            "type": "external",
+            "executable": "/var/app/index.js",
+            "environment": {
+              "mode": "unit"
+            }
+        }
+    }
+}
