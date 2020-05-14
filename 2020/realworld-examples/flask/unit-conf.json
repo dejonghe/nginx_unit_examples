@@ -1,0 +1,17 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "applications/flask_project"
+        }
+    },
+
+    "applications": {
+        "flask_project": {
+            "type": "python",
+            "path": "/var/app",
+            "module": "app",
+            "user": "nobody"
+        }
+    }
+}
+
