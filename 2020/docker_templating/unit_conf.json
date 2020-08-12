@@ -1,0 +1,18 @@
+{
+    "listeners": {
+        "*:8080": {
+            "application": "express_project"
+        }
+    },
+
+    "applications": {
+        "express_project": {
+            "type": "external",
+            "executable": "/var/app/server.js",
+            "user": "root",
+            "environment": {
+                "NODE_ENV": "SET_NODE_ENV"
+            }
+        }
+    }
+}

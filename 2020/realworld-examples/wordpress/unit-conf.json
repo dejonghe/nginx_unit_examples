@@ -15,14 +15,14 @@
                     ]
                 },
                 "action": {
-                    "pass": "applications/wordpress_direct"
+                    "pass": "applications/wordpress/direct"
                 }
             },
             {
                 "action": {
                     "share": "/var/app/wordpress/",
                     "fallback": {
-                        "pass": "applications/wordpress"
+                        "pass": "applications/wordpress/index"
                     }
                 }
             }
@@ -33,15 +33,15 @@
             "type": "php",
             "user": "nobody",
             "group": "nogroup",
-            "root": "/var/app/wordpress/",
-            "script": "index.php"
-        },
-        "wordpress_direct": {
-            "type": "php",
-            "user": "nobody",
-            "group": "nogroup",
-            "root": "/var/app/wordpress/"
+            "targets": {
+                "direct": {
+                    "root": "/var/app/wordpress/"
+                },
+                "index": {
+                    "root": "/var/app/wordpress/",
+                    "script": "index.php"
+                }
+            }
         }
-
     }
 }
